@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 0d141d9082219f0409b44afa02cc83dd
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - MaruBuri
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f9883365fdd1e1e4fa4e89d3142a95ac, type: 3}
+  - {fileID: 12800000, guid: 38250756c165f3c4290e85209f94ff70, type: 3}
+  - {fileID: 12800000, guid: 7786f9847189c844bab6edd7b00c36cd, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
