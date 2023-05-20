@@ -183,6 +183,21 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
         }
     }
 
+    void Zoom()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            Camera.main.fieldOfView = 30;
+            // sni.SetActive(true);
+
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            Camera.main.fieldOfView = 60;
+            // sni.SetActive(false);
+        }
+    }
+
     void EquipItem(int _index)
     {
         if (_index == previousItemIndex)
