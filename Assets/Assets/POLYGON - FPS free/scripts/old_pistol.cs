@@ -19,7 +19,7 @@ public class old_pistol : MonoBehaviour
     {
         shoot_handle = player.GetComponent<polygon_fps_controller>().shoot_handle;
         recyle_particles_performance = GameObject.FindGameObjectWithTag("rycle");
-        
+
         change_equipment();
         _3rd_view = player.GetComponent<polygon_fps_controller>()._3rd;
 
@@ -48,7 +48,7 @@ public class old_pistol : MonoBehaviour
 
     void Update()
     {
-        
+
         Input_Status();
 
         // Input from the main player
@@ -75,7 +75,7 @@ public class old_pistol : MonoBehaviour
             Power_bolt = -1;
         }
 
-     
+
 
         ani.SetFloat("Power_bolt", Power_bolt);
 
@@ -101,13 +101,13 @@ public class old_pistol : MonoBehaviour
             current_spread = 0;
         }
 
-       
+
         if (button_aim && !button_shoot && !in_reload && magazine_current > 0)
         {
             // aim animation / animator
             ani.SetInteger("old_pistol", 5);
         }
-        
+
         if (!button_aim && !button_shoot && !in_reload && magazine_current > 0)
         {
             // idle animation / animator
@@ -266,7 +266,7 @@ public class old_pistol : MonoBehaviour
 
     bool button_shoot;
     bool button_aim;
-    bool key_reload;
+    // bool key_reload;
     bool cam_toggled;
 
 
@@ -308,16 +308,16 @@ public class old_pistol : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.R))
-        {
-            key_reload = true;
-        }
-        else
-        {
-            key_reload = false;
-        }
+        // if (Input.GetKey(KeyCode.R))
+        // {
+        //     key_reload = true;
+        // }
+        // else
+        // {
+        //     key_reload = false;
+        // }
 
-       
+
 
         if (_3rd_view)
         {
@@ -403,7 +403,7 @@ public class old_pistol : MonoBehaviour
         float add_hor_force = UnityEngine.Random.Range(-horizontal_force, horizontal_force);
 
         // full recoil
-        if (!suppressor_a_bool  && !suppressor_c_bool && !suppressor_d_bool)
+        if (!suppressor_a_bool && !suppressor_c_bool && !suppressor_d_bool)
         {
             player.GetComponent<polygon_fps_controller>().vertical_float_spread = -add_ver_force;
             player.GetComponent<polygon_fps_controller>().horizontal_float_spread = add_hor_force;
@@ -447,7 +447,7 @@ public class old_pistol : MonoBehaviour
 
 
 
-        RaycastHit hit;
+        // RaycastHit hit;
 
 
 
@@ -500,7 +500,7 @@ public class old_pistol : MonoBehaviour
     float reload_time;
     bool finished_reload_in_reload;
 
-    public GameObject Clip_on_point;  
+    public GameObject Clip_on_point;
     public IEnumerator reload_start()
     {
 
@@ -571,7 +571,7 @@ public class old_pistol : MonoBehaviour
     public Animator ani;
 
 
-    
+
     public Vector3 idle_cam;
     public Vector3 aim_cam;
     public Vector3 run_cam;
@@ -673,7 +673,7 @@ public class old_pistol : MonoBehaviour
         // disable all equipment
 
 
-        
+
         Equipment_holder.SetActive(false);
 
         lamp_laser_a.SetActive(false);
@@ -688,12 +688,12 @@ public class old_pistol : MonoBehaviour
         red_dot_a.SetActive(false);
 
 
-        
+
 
         if (red_dot_a_bool)
         {
             red_dot_a.SetActive(true);
-          
+
             Equipment_holder.SetActive(true);
         }
 
@@ -740,7 +740,7 @@ public class old_pistol : MonoBehaviour
 
 
 
-        
+
         if (suppressor_a_bool || suppressor_c_bool || suppressor_d_bool)
         {
 

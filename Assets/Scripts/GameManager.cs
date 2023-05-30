@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     void Awake()
     {
         Instance = this;
+        Cursor.visible = false;
     }
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
 
     private void OnExitButtonClick()
-    { 
+    {
         PhotonNetwork.LeaveRoom();
     }
 
@@ -41,6 +42,12 @@ public class GameManager : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.visible = true;
+        }
+        else
+            Cursor.visible = false;
         if (Input.GetKeyDown(KeyCode.Return))
         {
             chatMsgIf.Select();
@@ -77,7 +84,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
     public void SendLog()
     {
-        string msg = $"<color=#00ff00>[{PhotonNetwork.NickName}]</color> ´ÔÀº ³«»çÇß½À´Ï´Ù.";
+        string msg = $"<color=#00ff00>[{PhotonNetwork.NickName}]</color> ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.";
         pv.RPC("killLogtext", RpcTarget.AllBufferedViaServer, msg);
     }
 }
